@@ -25,10 +25,9 @@ export default function useManageSecureStorage() {
       ) as string;
 
       const userInfo: UserData = {
-        accessToken: accessToken ? accessToken : "",
-        refreshToken: refreshToken ? refreshToken : "",
+        accessToken: accessToken ? JSON.parse(accessToken) : "",
+        refreshToken: refreshToken ? JSON.parse(refreshToken) : "",
       };
-      console.log(accessToken);
       return userInfo;
     } catch (e) {
       console.log(e);
