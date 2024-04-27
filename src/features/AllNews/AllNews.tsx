@@ -6,8 +6,7 @@ import useManagePostsFetching from "../../hooks/useManagePostsFetching";
 function AllNews() {
   const { allPosts, endReached, isLoading, handleLoadMore } =
     useManagePostsFetching();
-
-  console.log(allPosts);
+  console.log(allPosts.length);
   return (
     <div>
       <NavBar />

@@ -1,15 +1,16 @@
-import {useEffect, useState} from 'react';
-import useManageAllPosts from './useManageAllPosts';
-import useAxiosPostsInstance from './useAxiosPostsInstance';
-import Post from '../data/post.type';
+import { useEffect, useState } from "react";
+import useManageAllPosts from "./useManageAllPosts";
+import useAxiosPostsInstance from "./useAxiosPostsInstance";
+import Post from "../data/post.type";
+import { POST_LIMIT } from "../service/api.data";
 
 const useManagePostsFetching = () => {
-  const {allPosts, addPosts, storePosts} = useManageAllPosts();
+  const { allPosts, addPosts, storePosts } = useManageAllPosts();
   const [page, setPage] = useState(1);
   const [endReached, setEndReached] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [refresh, setRefresh] = useState(false);
-  const {getPostsFromApi} = useAxiosPostsInstance();
+  const { getPostsFromApi } = useAxiosPostsInstance();
 
   const setPosts = (postsData: Post[]) => {
     const posts: Post[] = [];
@@ -40,8 +41,8 @@ const useManagePostsFetching = () => {
     const data = await getPostsFromApi(JSON.stringify(page));
     const postsData: Post[] = data.results;
     const paginationData = data.pagination;
-
-    if (!paginationData.hasNextPage) {
+    console.log(paginationData);
+    if (!paginationData.hasNextPage && allPosts.length % POST_LIMIT !== 0) {
       setIsLoading(false);
       setEndReached(true);
       return;
@@ -51,7 +52,7 @@ const useManagePostsFetching = () => {
 
     addPosts(posts);
 
-    setPage(prev => prev + 1);
+    setPage((prev) => prev + 1);
 
     setIsLoading(false);
   };
@@ -59,7 +60,7 @@ const useManagePostsFetching = () => {
   async function handleInitialFetch() {
     setIsLoading(true);
     storePosts([]);
-    const data = await getPostsFromApi('1');
+    const data = await getPostsFromApi("1");
     const postsData = data.results;
 
     const posts: Post[] = setPosts(postsData);
