@@ -7,8 +7,6 @@ import NewsDetails from "../../components/molecules/NewsDetails";
 
 function PostDetails() {
   const { allPosts } = useManageAllPosts();
-  // const { params } =
-  // useRoute<RouteProp<DrawerNavigatorPropsList, "AllNews" | "NewsToday">>();
   const navigate = useNavigate();
 
   const id = useParams();
