@@ -10,11 +10,13 @@ function AllNews() {
     <div>
       <NavBar />
       <PostsList posts={allPosts} />
-      <LoadMoreButton
-        onClick={handleLoadMore}
-        isLoading={isLoading}
-        endReached={endReached}
-      />
+      {allPosts.length > 0 && (
+        <LoadMoreButton
+          onClick={handleLoadMore}
+          isLoading={isLoading}
+          endReached={endReached}
+        />
+      )}
     </div>
   );
 }
