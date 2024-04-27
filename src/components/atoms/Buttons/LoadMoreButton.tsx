@@ -9,10 +9,10 @@ type Props = {
 const LoadMoreButton = ({ onClick, isLoading, endReached }: Props) => {
   return (
     <button onClick={onClick} style={{ color: "white", background: "black" }}>
-      <p>
+      <div>
         {endReached ? "No more news to show." : "Load More"}
         {isLoading ? <Spinner /> : <></>}
-      </p>
+      </div>
     </button>
   );
 };
