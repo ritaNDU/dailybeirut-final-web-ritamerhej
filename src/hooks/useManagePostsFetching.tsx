@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import useManageAllPosts from "./useManageAllPosts";
 import useAxiosPostsInstance from "./useAxiosPostsInstance";
 import Post from "../data/post.type";
-import { POST_LIMIT } from "../service/api.data";
 
 const useManagePostsFetching = () => {
   const { allPosts, addPosts, storePosts } = useManageAllPosts();
@@ -42,7 +41,7 @@ const useManagePostsFetching = () => {
     const postsData: Post[] = data.results;
     const paginationData = data.pagination;
     console.log(paginationData);
-    if (!paginationData.hasNextPage && allPosts.length % POST_LIMIT !== 0) {
+    if (page > paginationData.totalPages) {
       setIsLoading(false);
       setEndReached(true);
       return;
