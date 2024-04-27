@@ -7,14 +7,22 @@ function DailyNews() {
 
   //Here I didn't use useMemo because I know that the posts are only 10
   const newsToday = allPosts.filter((post) => post.category.includes("top"));
-  const top3Post = newsToday.slice(0, 3);
+  const topPost = newsToday.slice(0, 1);
   return (
-    <div>
+    <div className="flex flex-col gap-3">
       <NavBar />
-      <h2>Hot Today</h2>
-      <PostsList posts={top3Post} />
-      <h2>What's Happening Today</h2>
-      <PostsList posts={newsToday} />
+      <div className="p-5">
+        <div className="flex flex-col gap-1">
+          <h2 className="text-large font-bold text-text">Hot Today</h2>
+          <PostsList posts={topPost} />
+        </div>
+        <div className="flex flex-col gap-1">
+          <h2 className="text-large font-bold text-text">
+            What's Happening Today
+          </h2>
+          <PostsList posts={newsToday} />
+        </div>
+      </div>
     </div>
   );
 }

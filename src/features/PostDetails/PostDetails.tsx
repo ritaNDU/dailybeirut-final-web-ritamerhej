@@ -15,8 +15,9 @@ function PostDetails() {
   const goBack = () => {
     navigate(-1);
   };
+  console.log(post);
   return (
-    <div>
+    <div className="flex flex-col gap-3 p-5">
       {post ? (
         <NewsDetails
           title={post.title}
@@ -25,17 +26,20 @@ function PostDetails() {
           description={post.description}
           link={post.link}
           source={post.source_url}
+          language={post.language}
         />
       ) : (
         <>
-          <h2>Post Not Found</h2>
-          <p>
+          <h2 className="text-large font-bold place-self-center">
+            Post Not Found
+          </h2>
+          <p className="text-normal">
             You have either followed the wrong link, or have internet connection
             problems.
           </p>
         </>
       )}
-      <NavigationButton name="Go back" onClick={goBack} />
+      <NavigationButton name="Go back" onClick={goBack} className="w-full" />
     </div>
   );
 }

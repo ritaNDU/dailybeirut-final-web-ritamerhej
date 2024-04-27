@@ -5,7 +5,7 @@ type Props = {
 };
 const Spinner = ({ className }: Props) => {
   return (
-    <div className={`lds-circle color text-textColor ${className}`}>
+    <div className={`lds-circle ${className}`}>
       <div></div>
     </div>
   );

@@ -8,6 +8,7 @@ type Props = {
   description: string;
   link: string;
   source: string;
+  language: string;
 };
 const NewsDetails = ({
   title,
@@ -16,17 +17,30 @@ const NewsDetails = ({
   description,
   link,
   source,
+  language,
 }: Props) => {
   return (
-    <div>
-      <PostImage imageUrl={image_url} altText={title} />
-      <div>
-        <p>{title}</p>
-        <p>Published on: {pubDate}</p>
+    <div className="flex flex-col gap-3">
+      <PostImage imageUrl={image_url} altText={title} className="w-full" />
+      <div
+        className={`flex flex-col ${
+          language === "arabic" ? "place-items-end" : "place-items-start"
+        }`}
+      >
+        <p className="text-large font-bold text-textColor">{title}</p>
+        <p className="text-small font-normal text-textColor">
+          Published on: {pubDate}
+        </p>
       </div>
-      <p>{description}</p>
-      <div>
-        <p>Read full article at: </p>
+      <p
+        className={`text-textColor font-medium text-normal flex flex-col ${
+          language === "arabic" ? "place-items-end" : "place-items-start"
+        }`}
+      >
+        {description}
+      </p>
+      <div className="text-medium text-textColor">
+        <p className="font-bold">Read full article at: </p>
         <Link to={link} target="_blank">
           {source}
         </Link>

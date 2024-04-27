@@ -1,5 +1,6 @@
 import { Props } from "./commonsProps";
 import ErrorText from "../Errors/ErrorText";
+import "./styles.css";
 
 const FormInput = ({
   placeholder,
@@ -10,8 +11,9 @@ const FormInput = ({
   touched,
 }: Props) => {
   return (
-    <>
+    <div className="mb-2 flex flex-col gap-1">
       <input
+        className="form-field"
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -19,7 +21,7 @@ const FormInput = ({
         type="email"
       />
       {error && touched ? <ErrorText error={error} /> : <></>}
-    </>
+    </div>
   );
 };
 

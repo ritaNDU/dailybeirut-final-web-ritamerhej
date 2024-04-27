@@ -43,7 +43,7 @@ const SignupForm = () => {
       onSubmit={handleSignup}
     >
       {({ handleChange, handleBlur, submitForm, values, errors, touched }) => (
-        <>
+        <div className="flex flex-col">
           <FormInput
             placeholder="Email..."
             handleChange={handleChange("email")}
@@ -76,7 +76,7 @@ const SignupForm = () => {
             name="Submit"
             isLoading={isLoading}
           />
-        </>
+        </div>
       )}
     </Formik>
   );

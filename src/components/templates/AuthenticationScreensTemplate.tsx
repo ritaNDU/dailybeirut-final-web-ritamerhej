@@ -4,8 +4,8 @@ type Props = {
 };
 const AuthenticationScreensTemplate = ({ children, name }: Props) => {
   return (
-    <div>
-      <p>{name}</p>
+    <div className="p-4 flex flex-col place-items-center w-10/12 h-fit bg-backgroundColor rounded-xl shadow-xl gap-3">
+      <h2 className="text-large font-bold text-textColor">{name}</h2>
       {children}
     </div>
   );

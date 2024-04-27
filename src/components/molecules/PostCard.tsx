@@ -12,8 +12,11 @@ const PostCard = ({ title, imageUrl, postId }: Props) => {
     navigate(`/news/${postId}`);
   };
   return (
-    <div onClick={navigateToDetails} style={{ border: "1px solid black" }}>
-      <PostImage imageUrl={imageUrl} altText={title} />
+    <div
+      onClick={navigateToDetails}
+      className="flex flex-col gap-2 p-3 shadow-md mb-5"
+    >
+      <PostImage imageUrl={imageUrl} altText={title} className="w-full" />
       <p>{title}</p>
     </div>
   );

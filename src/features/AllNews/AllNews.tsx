@@ -7,17 +7,19 @@ function AllNews() {
   const { allPosts, endReached, isLoading, handleLoadMore } =
     useManagePostsFetching();
   return (
-    <div>
+    <>
       <NavBar />
-      <PostsList posts={allPosts} />
-      {allPosts.length > 0 && (
-        <LoadMoreButton
-          onClick={handleLoadMore}
-          isLoading={isLoading}
-          endReached={endReached}
-        />
-      )}
-    </div>
+      <div className="p-5">
+        <PostsList posts={allPosts} />
+        {allPosts.length > 0 && (
+          <LoadMoreButton
+            onClick={handleLoadMore}
+            isLoading={isLoading}
+            endReached={endReached}
+          />
+        )}
+      </div>
+    </>
   );
 }
 
