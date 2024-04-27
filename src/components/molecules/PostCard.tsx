@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import placeholderImage from "../../assets/authenticationbackground.jpg";
+import PostImage from "../atoms/PostImage";
 
 type Props = {
   title: string;
@@ -13,19 +13,7 @@ const PostCard = ({ title, imageUrl, postId }: Props) => {
   };
   return (
     <div onClick={navigateToDetails} style={{ border: "1px solid black" }}>
-      {imageUrl ? (
-        <img
-          src={imageUrl}
-          alt={`image about ${title}`}
-          style={{ width: 100, height: 100 }}
-        />
-      ) : (
-        <img
-          src={placeholderImage}
-          alt={`Illustration about a newspaper`}
-          style={{ width: 100, height: 100 }}
-        />
-      )}
+      <PostImage imageUrl={imageUrl} altText={title} />
       <p>{title}</p>
     </div>
   );
