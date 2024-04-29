@@ -8,7 +8,6 @@ const useManagePostsFetching = () => {
   const [page, setPage] = useState(1);
   const [endReached, setEndReached] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [refresh, setRefresh] = useState(false);
   const { getPostsFromApi } = useAxiosPostsInstance();
 
   const setPosts = (postsData: Post[]) => {
@@ -36,22 +35,23 @@ const useManagePostsFetching = () => {
 
   const handleLoadMore = async () => {
     setIsLoading(true);
+    if (!endReached) {
+      const data = await getPostsFromApi(JSON.stringify(page));
+      const postsData: Post[] = data.results;
+      const paginationData = data.pagination;
 
-    const data = await getPostsFromApi(JSON.stringify(page));
-    const postsData: Post[] = data.results;
-    const paginationData = data.pagination;
-    console.log(paginationData);
-    if (page > paginationData.totalPages) {
-      setIsLoading(false);
-      setEndReached(true);
-      return;
+      if (page > paginationData.totalPages) {
+        setIsLoading(false);
+        setEndReached(true);
+        return;
+      }
+
+      const posts: Post[] = setPosts(postsData);
+
+      addPosts(posts);
+
+      setPage((prev) => prev + 1);
     }
-
-    const posts: Post[] = setPosts(postsData);
-
-    addPosts(posts);
-
-    setPage((prev) => prev + 1);
 
     setIsLoading(false);
   };
@@ -70,13 +70,6 @@ const useManagePostsFetching = () => {
     setIsLoading(false);
   }
 
-  const handleRefresh = async () => {
-    setRefresh(true);
-    handleInitialFetch();
-    setEndReached(false);
-    setRefresh(false);
-  };
-
   useEffect(() => {
     handleInitialFetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -86,9 +79,7 @@ const useManagePostsFetching = () => {
     allPosts,
     endReached,
     isLoading,
-    refresh,
     handleLoadMore,
-    handleRefresh,
   };
 };
 
