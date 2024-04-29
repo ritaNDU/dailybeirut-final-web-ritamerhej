@@ -1,4 +1,6 @@
+import Spinner from "../../components/atoms/Spinner";
 import NavBar from "../../components/molecules/NavBar";
+import PostCard from "../../components/molecules/PostCard";
 import PostsList from "../../components/organisms/PostsList";
 import useManagePostsFetching from "../../hooks/useManagePostsFetching";
 
@@ -7,20 +9,31 @@ function DailyNews() {
 
   //Here I didn't use useMemo because I know that the posts are only 10
   const newsToday = allPosts.filter((post) => post.category.includes("top"));
-  const topPost = newsToday.slice(0, 1);
+  const topPost = newsToday[0];
   return (
     <div className="flex flex-col gap-3">
       <NavBar />
       <div className="p-5">
         <div className="flex flex-col gap-1">
-          <h2 className="text-large font-bold text-text">Hot Today</h2>
-          <PostsList posts={topPost} />
+          <h2 className="text-large font-bold text-textColor">Hot Today</h2>
+          {topPost ? (
+            <PostCard
+              postId={topPost._id}
+              title={topPost.title}
+              imageUrl={topPost.image_url}
+              className="md:w-11/12 md:place-items-center md:place-self-center"
+            />
+          ) : (
+            <Spinner className="text-textColor place-self-center" />
+          )}
         </div>
         <div className="flex flex-col gap-1">
           <h2 className="text-large font-bold text-text">
             What's Happening Today
           </h2>
-          <PostsList posts={newsToday} />
+          <div className="flex flex-col md:flex-row md:flex-wrap md:gap-1 md:justify-around">
+            <PostsList posts={newsToday} />
+          </div>
         </div>
       </div>
     </div>
