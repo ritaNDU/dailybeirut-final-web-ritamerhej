@@ -13,24 +13,16 @@ const NavBar = () => {
   return (
     <>
       {isUserSignedIn && (
-        <div className="flex p-3 shadow-lg">
+        <div className="flex p-3 shadow-lg  bg-backgroundColor">
           <nav className="flex justify-center w-full gap-3 ">
             <NavLink
               to={"/dailynews"}
-              className={({ isActive }) =>
-                isActive
-                  ? "bg-primary text-accentColor text-medium font-bold p-1 rounded-xl"
-                  : "bg-accentColor text-primary text-medium font-bold p-1 rounded-xl"
-              }
+              className="bg-accentColor text-primary text-medium font-bold p-1 rounded-xl"
             >
               Daily News
             </NavLink>
             <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "bg-primary text-accentColor text-medium font-bold p-1 rounded-xl"
-                  : "bg-accentColor text-primary text-medium font-bold p-1 rounded-xl"
-              }
+              className="bg-accentColor text-primary text-medium font-bold p-1 rounded-xl"
               to={"/allnews"}
             >
               All News

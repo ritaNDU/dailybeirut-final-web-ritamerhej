@@ -3,7 +3,7 @@ type Props = {
 };
 
 const ErrorText = ({ error }: Props) => {
-  return <p>{error}</p>;
+  return <p className="font-bold text-errorColor">{error}</p>;
 };
 
 export default ErrorText;

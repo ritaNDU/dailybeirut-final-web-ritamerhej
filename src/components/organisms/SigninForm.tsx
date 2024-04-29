@@ -31,8 +31,6 @@ const SigninForm = () => {
     if (tokens) {
       storeUserInfo(tokens.accessToken, tokens.refreshToken);
       signUserIn();
-    } else {
-      alert("Incorrect credentials. Are you registered?");
     }
     setIsLoading(false);
   };

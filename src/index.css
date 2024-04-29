@@ -12,3 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.active {
+  @apply bg-primary text-accentColor text-medium font-bold p-1 rounded-xl;
+}

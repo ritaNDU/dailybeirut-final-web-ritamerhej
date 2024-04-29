@@ -14,7 +14,6 @@ import useManageSecureStorage from "../hooks/useManageSecureStorage";
 function MainNavigator() {
   const { getStoredUserInfo } = useManageSecureStorage();
   const { isUserSignedIn, signUserIn } = useManageUser();
-  // const [isLoading, setIsLoading] = useState(true);
   const router = createBrowserRouter([
     {
       path: "/",

@@ -11,6 +11,7 @@ export default {
         activeTabBackground: "#ababab",
         textColor: "#1A1C1A",
         focusColor: "#cdcdcd",
+        errorColor: "#ff3333",
       },
       fontSize: {
         small: "10px",

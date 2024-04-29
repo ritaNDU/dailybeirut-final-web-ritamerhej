@@ -4,7 +4,7 @@ import SigninForm from "../../components/organisms/SigninForm";
 
 function Login() {
   return (
-    <div className="h-screen flex flex-col place-items-center justify-center bg-newspaper-background bg-cover bg-top  bg-no-repeat">
+    <div className="h-screen flex flex-col place-items-center justify-center bg-newspaper-background bg-cover bg-top  bg-no-repeat ">
       <AuthenticationScreensTemplate name="Login">
         <>
           <SigninForm />

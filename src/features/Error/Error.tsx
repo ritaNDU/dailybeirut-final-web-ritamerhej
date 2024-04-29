@@ -7,10 +7,12 @@ export default function ErrorPage() {
     navigate("/");
   };
   return (
-    <div>
-      <h1>Oops!</h1>
-      <p>An unexpected error has occurred.</p>
-      <NavigationButton name="Go Back" onClick={goBack} />
+    <div className="h-screen flex flex-col gap-2 justify-center place-items-center">
+      <h1 className="text-extraLarge font-bold">Oops!</h1>
+      <p className="text-normal font-medium">
+        An unexpected error has occurred.
+      </p>
+      <NavigationButton name="Go Back" onClick={goBack} className="w-fit p-2" />
     </div>
   );
 }

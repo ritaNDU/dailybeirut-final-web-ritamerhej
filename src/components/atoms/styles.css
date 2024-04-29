@@ -11,8 +11,8 @@
 }
 .lds-circle > div {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   background: currentColor;
   border-radius: 50%;
   animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
