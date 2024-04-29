@@ -20,26 +20,27 @@ const NewsDetails = ({
   language,
 }: Props) => {
   return (
-    <div className="flex flex-col gap-3">
-      <PostImage imageUrl={image_url} altText={title} className="w-full" />
-      <div
-        className={`flex flex-col ${
-          language === "arabic" ? "place-items-end" : "place-items-start"
-        }`}
-      >
-        <p className="text-large font-bold text-textColor">{title}</p>
-        <p className="text-small font-normal text-textColor">
+    <div
+      className="flex flex-col gap-3 overflow-hidden"
+      dir={language === "arabic" ? "rtl" : "ltr"}
+    >
+      <PostImage
+        imageUrl={image_url}
+        altText={title}
+        className="w-fit h-fit place-self-center"
+      />
+      <div className="flex flex-col">
+        <p className="text-large md:text-extraLarge font-bold text-textColor">
+          {title}
+        </p>
+        <p className="text-medium md:text-normal font-light text-textColor">
           Published on: {pubDate}
         </p>
       </div>
-      <p
-        className={`text-textColor font-medium text-normal flex flex-col ${
-          language === "arabic" ? "place-items-end" : "place-items-start"
-        }`}
-      >
+      <p className="text-textColor font-medium text-normal flex flex-col">
         {description}
       </p>
-      <div className="text-medium text-textColor">
+      <div className="text-medium text-textColor" dir="ltr">
         <p className="font-bold">Read full article at: </p>
         <Link to={link} target="_blank">
           {source}

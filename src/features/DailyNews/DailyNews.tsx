@@ -21,7 +21,9 @@ function DailyNews() {
               postId={topPost._id}
               title={topPost.title}
               imageUrl={topPost.image_url}
-              className="md:w-11/12 md:place-items-center md:place-self-center"
+              language={topPost.language}
+              className="md:w-5/6 md:h-fit md:place-items-center md:place-self-center"
+              textSize="text-large"
             />
           ) : (
             <Spinner className="text-textColor place-self-center" />

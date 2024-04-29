@@ -18,6 +18,8 @@ const PostsList = ({ posts }: Props) => {
               title={post.title}
               imageUrl={post.image_url}
               postId={post._id}
+              language={post.language}
+              textSize="text-normal"
             />
           );
         })

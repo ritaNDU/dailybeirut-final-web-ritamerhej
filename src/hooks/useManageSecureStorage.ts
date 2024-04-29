@@ -29,8 +29,8 @@ export default function useManageSecureStorage() {
         refreshToken: refreshToken ? JSON.parse(refreshToken) : "",
       };
       return userInfo;
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   }
 

@@ -4,6 +4,7 @@ import { getPostById } from "../../utils/postsUtils";
 import NavigationButton from "../../components/atoms/Buttons/NavigationButton";
 import Post from "../../data/post.type";
 import NewsDetails from "../../components/molecules/NewsDetails";
+import NavBar from "../../components/molecules/NavBar";
 
 function PostDetails() {
   const { allPosts } = useManageAllPosts();
@@ -15,31 +16,37 @@ function PostDetails() {
   const goBack = () => {
     navigate(-1);
   };
-  console.log(post);
   return (
-    <div className="flex flex-col gap-3 p-5">
-      {post ? (
-        <NewsDetails
-          title={post.title}
-          pubDate={post.pubDate}
-          image_url={post.image_url}
-          description={post.description}
-          link={post.link}
-          source={post.source_url}
-          language={post.language}
+    <div className="flex flex-col gap-3">
+      <NavBar />
+      <div className="p-10">
+        {post ? (
+          <NewsDetails
+            title={post.title}
+            pubDate={post.pubDate}
+            image_url={post.image_url}
+            description={post.description}
+            link={post.link}
+            source={post.source_url}
+            language={post.language}
+          />
+        ) : (
+          <>
+            <h2 className="text-large font-bold place-self-center">
+              Post Not Found
+            </h2>
+            <p className="text-normal">
+              You have either followed the wrong link, or have internet
+              connection problems.
+            </p>
+          </>
+        )}
+        <NavigationButton
+          name="Go back"
+          onClick={goBack}
+          className="w-full my-5"
         />
-      ) : (
-        <>
-          <h2 className="text-large font-bold place-self-center">
-            Post Not Found
-          </h2>
-          <p className="text-normal">
-            You have either followed the wrong link, or have internet connection
-            problems.
-          </p>
-        </>
-      )}
-      <NavigationButton name="Go back" onClick={goBack} className="w-full" />
+      </div>
     </div>
   );
 }
