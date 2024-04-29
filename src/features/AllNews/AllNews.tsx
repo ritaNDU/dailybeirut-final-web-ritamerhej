@@ -9,7 +9,7 @@ function AllNews() {
   return (
     <>
       <NavBar />
-      <div className="p-5">
+      <div className="p-10 flex flex-col md:flex-row md:flex-wrap md:justify-center md:gap-10">
         <PostsList posts={allPosts} />
         {allPosts.length > 0 && (
           <LoadMoreButton

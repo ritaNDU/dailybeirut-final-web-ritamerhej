@@ -7,21 +7,11 @@ type Props = {
 };
 const PostImage = ({ imageUrl, altText, className }: Props) => {
   return (
-    <div>
-      {imageUrl ? (
-        <img
-          className={className}
-          src={imageUrl}
-          alt={`Image about ${altText}`}
-        />
-      ) : (
-        <img
-          className={className}
-          src={placeholderImage}
-          alt={`Illustration about a newspaper`}
-        />
-      )}
-    </div>
+    <img
+      className={className}
+      src={imageUrl ?? placeholderImage}
+      alt={`Image about ${altText}`}
+    />
   );
 };
 
