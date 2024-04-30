@@ -9,7 +9,7 @@ function Signup() {
         <img
           src={backArrowIcon}
           alt="Go Back Icon"
-          className="w-5 h-5 hover:animate-spin"
+          className="w-10 h-10 hover:animate-spin"
         />
       </Link>
       <AuthenticationScreensTemplate name="Signup">
