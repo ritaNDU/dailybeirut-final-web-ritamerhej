@@ -17,9 +17,14 @@ function PostDetails() {
     navigate(-1);
   };
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       <NavBar />
-      <div className="p-10">
+      <div className="px-10 py-3 md:py-2 md:px-10">
+        <NavigationButton
+          name="Go back"
+          onClick={goBack}
+          className="place-self-start p-2 mb-4 md:mb-2"
+        />
         {post ? (
           <NewsDetails
             title={post.title}
@@ -41,11 +46,6 @@ function PostDetails() {
             </p>
           </>
         )}
-        <NavigationButton
-          name="Go back"
-          onClick={goBack}
-          className="w-full my-5"
-        />
       </div>
     </div>
   );

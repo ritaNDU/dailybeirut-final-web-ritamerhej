@@ -14,29 +14,26 @@ function DailyNews() {
     <div className="flex flex-col gap-3">
       <NavBar />
       <div className="p-5">
-        <div className="flex flex-col gap-1">
-          <h2 className="text-large font-bold text-textColor">Hot Today</h2>
+        <div className="flex flex-col gap-2">
           {topPost ? (
             <PostCard
               postId={topPost._id}
               title={topPost.title}
               imageUrl={topPost.image_url}
               language={topPost.language}
-              className="md:w-9/12 md:h-auto md:place-items-center md:place-self-center"
+              className="md:w-full md:h-[500px] md:place-items-center md:place-self-center"
               textSize="text-large"
             />
           ) : (
             <Spinner className="text-textColor place-self-center" />
           )}
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <h2 className="text-large font-bold text-text">
             What's Happening Today
           </h2>
           <div className="flex flex-col justify-center place-items-center md:w-screen ">
-            <div className="flex flex-col justify-center place-items-center md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
-              <PostsList posts={newsToday} />
-            </div>
+            <PostsList posts={newsToday} />
           </div>
         </div>
       </div>

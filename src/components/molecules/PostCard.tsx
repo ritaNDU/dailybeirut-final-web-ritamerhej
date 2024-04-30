@@ -30,7 +30,7 @@ const PostCard = ({
       <PostImage
         imageUrl={imageUrl}
         altText={title}
-        className="w-full h-full md:w-full md:h-3/4"
+        className="w-full h-full"
       />
       <p className={` text-textColor ${textSize}`}>{title}</p>
     </div>

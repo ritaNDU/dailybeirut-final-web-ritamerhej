@@ -27,7 +27,7 @@ const NewsDetails = ({
       <PostImage
         imageUrl={image_url}
         altText={title}
-        className="w-fit h-fit place-self-center"
+        className="w-fit h-fit place-self-center md:w-full md:h-80"
       />
       <div className="flex flex-col">
         <p className="text-large md:text-extraLarge font-bold text-textColor">
@@ -40,8 +40,8 @@ const NewsDetails = ({
       <p className="text-textColor font-medium text-normal flex flex-col">
         {description}
       </p>
-      <div className="text-medium text-textColor" dir="ltr">
-        <p className="font-bold">Read full article at: </p>
+      <div className="text-normal text-textColor mb-3" dir="ltr">
+        <p className="font-bold text-normal">Read full article at: </p>
         <Link to={link} target="_blank">
           {source}
         </Link>

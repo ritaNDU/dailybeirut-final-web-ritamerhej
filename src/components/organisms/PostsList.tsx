@@ -7,7 +7,7 @@ type Props = {
 };
 const PostsList = ({ posts }: Props) => {
   return (
-    <>
+    <div className="flex flex-col md:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3">
       {posts.length === 0 ? (
         <Spinner className="text-textColor" />
       ) : (
@@ -24,7 +24,7 @@ const PostsList = ({ posts }: Props) => {
           );
         })
       )}
-    </>
+    </div>
   );
 };
 
