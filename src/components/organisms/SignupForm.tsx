@@ -20,7 +20,7 @@ const SignupForm = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSignup = (
+  const handleSignup = async (
     values: InitialSignupFormType,
     { resetForm }: { resetForm: () => void }
   ) => {
@@ -29,11 +29,13 @@ const SignupForm = () => {
       password: values.password,
     };
     setIsLoading(true);
-    createNewUser(user);
-    resetForm();
-    setIsLoading(false);
-    alert("Account created successfully!");
-    navigate("/");
+    try {
+      await createNewUser(user);
+      navigate("/");
+    } finally {
+      resetForm();
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -75,6 +77,7 @@ const SignupForm = () => {
             onClick={handleSubmit(submitForm)}
             name="Submit"
             isLoading={isLoading}
+            className="p-2 max-[280px]:p-1"
           />
         </div>
       )}

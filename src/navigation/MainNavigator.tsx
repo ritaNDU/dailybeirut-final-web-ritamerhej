@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ErrorPage from "../features/Error/Error";
 import ProtectedRoute from "../components/templates/ProtectedRoute";
 import PostDetails from "../features/PostDetails/PostDetails";
@@ -10,10 +10,13 @@ import Login from "../features/Login/Login";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useManageUser from "../hooks/useManageUser";
 import useManageSecureStorage from "../hooks/useManageSecureStorage";
+import Loading from "../components/templates/Loading";
 
 function MainNavigator() {
   const { getStoredUserInfo } = useManageSecureStorage();
   const { isUserSignedIn, signUserIn } = useManageUser();
+  const [isLoading, setIsLoading] = useState(true);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -63,19 +66,25 @@ function MainNavigator() {
 
   useEffect(() => {
     function getToken() {
-      const userInfo = getStoredUserInfo();
-      if (
-        userInfo &&
-        userInfo.accessToken !== "" &&
-        userInfo.refreshToken !== ""
-      ) {
-        signUserIn();
+      try {
+        const userInfo = getStoredUserInfo();
+        if (
+          userInfo &&
+          userInfo.accessToken !== "" &&
+          userInfo.refreshToken !== ""
+        ) {
+          signUserIn();
+        }
+      } finally {
+        setIsLoading(false);
       }
     }
     getToken();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isUserSignedIn]);
-
+  if (isLoading) {
+    return <Loading />;
+  }
   return <RouterProvider router={router} />;
 }
 

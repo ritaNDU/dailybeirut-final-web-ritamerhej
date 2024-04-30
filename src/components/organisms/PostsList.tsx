@@ -9,7 +9,7 @@ const PostsList = ({ posts }: Props) => {
   return (
     <>
       {posts.length === 0 ? (
-        <Spinner className="text-textColor place-self-center" />
+        <Spinner className="text-textColor" />
       ) : (
         posts.map((post) => {
           return (

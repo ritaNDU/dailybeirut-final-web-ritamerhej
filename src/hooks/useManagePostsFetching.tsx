@@ -17,16 +17,12 @@ const useManagePostsFetching = () => {
         _id: postsData[key]._id,
         title: postsData[key].title,
         description: postsData[key].description,
-        country: postsData[key].country,
-        creator: postsData[key].creator,
         pubDate: postsData[key].pubDate,
         image_url: postsData[key].image_url,
-        video_url: postsData[key].video_url,
         source_url: postsData[key].source_url,
         language: postsData[key].language,
         link: postsData[key].link,
         category: postsData[key].category,
-        keywords: postsData[key].keywords,
       };
       posts.push(post);
     }
@@ -66,7 +62,7 @@ const useManagePostsFetching = () => {
 
     storePosts(posts);
     setPage(2);
-
+    setEndReached(false);
     setIsLoading(false);
   }
 

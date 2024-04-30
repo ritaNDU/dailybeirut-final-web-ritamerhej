@@ -13,7 +13,7 @@ const FormInput = ({
   return (
     <div className="mb-2 flex flex-col gap-1">
       <input
-        className="form-field max-[280px]:w-full max-[280px]:place-self-start"
+        className="form-field max-[280px]:w-full max-[280px]:place-self-start outline-none"
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}

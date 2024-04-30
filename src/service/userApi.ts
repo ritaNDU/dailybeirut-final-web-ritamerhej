@@ -13,8 +13,10 @@ export async function createNewUser(user: User) {
       ...user,
       token_expires_in: TOKEN_EXPIRATION,
     });
-  } catch (e) {
+    alert("Account created successfully!");
+  } catch {
     alert("Couldn't create user. You may already be registered.");
+    throw Error();
   }
 }
 
@@ -32,7 +34,7 @@ export async function getUserTokens(user: User) {
       };
       return userTokens;
     }
-  } catch (e) {
+  } catch {
     alert(
       "Login failed. You either entered wrong credentials or are not registered yet."
     );
@@ -50,7 +52,7 @@ export async function refreshUserToken(refreshToken: string) {
       const newAccessToken: string = data.accessToken;
       return newAccessToken;
     }
-  } catch (e) {
+  } catch {
     alert("An error occured. Try again or Logout.");
   }
 }

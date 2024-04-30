@@ -22,7 +22,7 @@ function DailyNews() {
               title={topPost.title}
               imageUrl={topPost.image_url}
               language={topPost.language}
-              className="md:w-5/6 md:h-fit md:place-items-center md:place-self-center"
+              className="md:w-9/12 md:h-auto md:place-items-center md:place-self-center"
               textSize="text-large"
             />
           ) : (
@@ -33,8 +33,10 @@ function DailyNews() {
           <h2 className="text-large font-bold text-text">
             What's Happening Today
           </h2>
-          <div className="flex flex-col md:flex-row md:flex-wrap md:gap-1 md:justify-around">
-            <PostsList posts={newsToday} />
+          <div className="flex flex-col justify-center place-items-center md:w-screen ">
+            <div className="flex flex-col justify-center place-items-center md:grid md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+              <PostsList posts={newsToday} />
+            </div>
           </div>
         </div>
       </div>

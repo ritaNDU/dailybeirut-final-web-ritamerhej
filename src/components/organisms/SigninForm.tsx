@@ -23,16 +23,22 @@ const SigninForm = () => {
 
   const handleSignin = async (values: InitialSigninFormType) => {
     setIsLoading(true);
-    const tokens = await getUserTokens({
-      email: values.email,
-      password: values.password,
-    });
 
-    if (tokens) {
-      storeUserInfo(tokens.accessToken, tokens.refreshToken);
-      signUserIn();
+    try {
+      const tokens = await getUserTokens({
+        email: values.email,
+        password: values.password,
+      });
+
+      if (tokens) {
+        storeUserInfo(tokens.accessToken, tokens.refreshToken);
+        signUserIn();
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   return (
@@ -64,6 +70,7 @@ const SigninForm = () => {
             onClick={handleSubmit(submitForm)}
             name="Submit"
             isLoading={isLoading}
+            className="p-2 max-[280px]:p-1"
           />
         </div>
       )}
