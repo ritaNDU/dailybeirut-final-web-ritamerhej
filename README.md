@@ -14,14 +14,16 @@ rita@test.com
 
 ## Description
 
-Daily Beirut is a Digital Newspaper. It is available as an application to install on your phone, or as a website you can access using any browser you have available. ]
+Daily Beirut is a Digital Newspaper. It is available as an application to install on your phone, or as a website you can access using any browser you have available.
 
 This repository provides the website version of Daily Beirut.
-The navtive mobile application is available at this [repository](https://github.com/ritaNDU/beiruttimes-final-ritamerhej).
+The native mobile application is available at this [repository](https://github.com/ritaNDU/beiruttimes-final-ritamerhej).
 
 Tokens are stored in localstorage, and for security reasons they are encrypted. So, you will stay logged in as long as localstorage has not been cleared. Therefore, make sure that your browser does not clear data stored in it automatically, to have this feature enabled.
 
-To use it, you have to create an account, login, and start reading all the latest news.
+To start reading news on Daily Beirut, you have to create an account, login, and start reading all the latest news.
+
+Or, you can use the provided testing account.
 
 ## How to run the code
 
