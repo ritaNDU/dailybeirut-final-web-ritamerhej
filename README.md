@@ -24,7 +24,7 @@ To use it, you have to create an account, login, and start reading all the lates
 ## How to run the code
 
 1. Clone the repository using the following command:
-   `git clone https://github.com/ritaNDU/beiruttimes-final-ritamerhej.git`
+   `git clone https://github.com/ritaNDU/dailybeirut-final-web-ritamerhej.git`
 2. Inside the cloned repository run either of the following commands:
    `yarn` or `npm install`
 3. To start the server, run either of these commands:
