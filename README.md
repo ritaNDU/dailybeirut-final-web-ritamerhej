@@ -79,17 +79,13 @@ It is divided into:
 
 This is where all custom hooks are stored.
 
-### The screens/ folder:
+### The features/ folder:
 
-This is where all screens are stored.
+This is where all pages are implemented.
 
 ### The store/ folder:
 
-This is where the redux storeis implemented.
-
-### The styles/ folder:
-
-This is where the theme is stored.
+This is where the redux store is implemented.
 
 ### The data/ folder:
 
