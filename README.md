@@ -1,4 +1,4 @@
-# Daily Beirut
+# Daily Beirut - Web Version
 
 ## Testing Account
 
