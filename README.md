@@ -97,7 +97,7 @@ It contains data, and interfaces to structure data objects.
 
 ### The navigation/ folder:
 
-This is where navigation is implemented. react-navigation is being used for navigation.
+This is where navigation is implemented.
 
 ### The utils/ folder:
 
