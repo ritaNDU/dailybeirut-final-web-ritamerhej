@@ -14,7 +14,12 @@ roy@testing.com
 
 ## Description
 
-Daily Beirut is a digital newspaper app. To use it, you have to create an account, login, and start reading all the latest news.
+Daily Beirut is a Digital Newspaper. It is available as an application to install on your phone, or as a website you can access using any browser you have available. ]
+
+This repository provides the website version of Daily Beirut.
+The navtive mobile application is available at this [repository](https://github.com/ritaNDU/beiruttimes-final-ritamerhej).
+
+To use it, you have to create an account, login, and start reading all the latest news.
 
 ## How to run the code
 
@@ -23,19 +28,23 @@ Daily Beirut is a digital newspaper app. To use it, you have to create an accoun
 2. Inside the cloned repository run either of the following commands:
    `yarn` or `npm install`
 3. To start the server, run either of these commands:
-   `yarn start` or `npm run start`
+   `yarn dev` or `npm run dev`
 
 ## How I Got Organized
 
-I drew a plan for my app on pen and paper. I then figured out how the data should flow in the app, and what data was needed and what was its architecture. I had planned plenty of other feature,but had to cut them out for now due time restrictions.
+I drew a plan for my app on pen and paper. I then figured out how the data should flow in the app, and what data was needed and what was its architecture. As the deadline for the project changed, I had to adapt my requirements.
 
-I will implement them over time whenever I have some free time.
+I then implemented the core requirements, one at a time.
+
+Regarding other features, I will be implementing them on my free time for fun.
 
 ## Challenges Faced
 
 ### Design
 
 Still an ongoing issue. So I went with the simplest design I found, that works.
+
+I showed the design to my familly and to friends and got good reviews.
 
 ### Authentication
 
@@ -97,3 +106,5 @@ All api functions are implemented here, as well as interceptors.
 ## Attribution
 
 The background image used for the login and signup screens is made by [freepik](https://www.freepik.com/free-photo/top-view-newspaper-pieces-assortment_23994213.htm#query=newspaper%20background&position=1&from_view=keyword&track=ais&uuid=52000741-bb36-4006-ba0e-c94400154db0)
+
+The website and application icon has been generated using [IconKitchen](https://icon.kitchen/)
