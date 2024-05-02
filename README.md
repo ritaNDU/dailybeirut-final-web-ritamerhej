@@ -38,9 +38,11 @@ Or, you can use the provided testing account.
 
 I drew a plan for my app on pen and paper. I then figured out how the data should flow in the app, and what data was needed and what was its architecture. As the deadline for the project changed, I had to adapt my requirements.
 
-I then implemented the core requirements, one at a time.
+I first implemented the mobile app, then I reused all the code that could be reused in this version.
 
-Regarding other features, I will be implementing them on my free time for fun.
+I implemented all the core requirements, one at a time.
+
+Regarding other features, I will be implementing them on my free time, for fun.
 
 ## Challenges Faced
 
