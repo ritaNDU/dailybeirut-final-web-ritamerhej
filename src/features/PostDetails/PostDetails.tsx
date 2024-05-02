@@ -5,6 +5,7 @@ import NavigationButton from "../../components/atoms/Buttons/NavigationButton";
 import Post from "../../data/post.type";
 import NewsDetails from "../../components/molecules/NewsDetails";
 import NavBar from "../../components/molecules/NavBar";
+import PostNotFoundError from "../../components/molecules/PostNotFoundError";
 
 function PostDetails() {
   const { allPosts } = useManageAllPosts();
@@ -36,15 +37,7 @@ function PostDetails() {
             language={post.language}
           />
         ) : (
-          <>
-            <h2 className="text-large font-bold place-self-center">
-              Post Not Found
-            </h2>
-            <p className="text-normal">
-              You have either followed the wrong link, or have internet
-              connection problems.
-            </p>
-          </>
+          <PostNotFoundError />
         )}
       </div>
     </div>

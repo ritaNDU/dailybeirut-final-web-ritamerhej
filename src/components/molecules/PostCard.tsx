@@ -24,15 +24,15 @@ const PostCard = ({
   return (
     <div
       onClick={navigateToDetails}
-      className={`flex flex-col gap-2 p-3 shadow-md mb-5 w-fit h-fit md:w-[300px] md:h-[200px] ${className}`}
+      className={`flex flex-col gap-2 p-3 shadow-md mb-5 w-fit h-fit md:w-[300px] md:h-[400px] text-wrap overflow-hidden ${className}`}
       dir={language === "arabic" ? "rtl" : "ltr"}
     >
       <PostImage
         imageUrl={imageUrl}
         altText={title}
-        className="w-full h-full"
+        className="w-full h-full md:h-3/4 md:w-screen"
       />
-      <p className={` text-textColor ${textSize}`}>{title}</p>
+      <p className={`text-textColor  ${textSize}`}>{title}</p>
     </div>
   );
 };

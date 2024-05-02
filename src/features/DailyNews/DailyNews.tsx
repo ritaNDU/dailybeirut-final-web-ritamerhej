@@ -7,11 +7,11 @@ import useManagePostsFetching from "../../hooks/useManagePostsFetching";
 function DailyNews() {
   const { allPosts } = useManagePostsFetching();
 
-  //Here I didn't use useMemo because I know that the posts are only 10
+  //Here I didn't use useMemo because I know for sure that the posts are only 10
   const newsToday = allPosts.filter((post) => post.category.includes("top"));
   const topPost = newsToday[0];
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 md:overflow-hidden">
       <NavBar />
       <div className="p-5">
         <div className="flex flex-col gap-2">
@@ -21,7 +21,7 @@ function DailyNews() {
               title={topPost.title}
               imageUrl={topPost.image_url}
               language={topPost.language}
-              className="md:w-full md:h-[500px] md:place-items-center md:place-self-center"
+              className="md:w-full md:h-[500px] md:jus md:place-items-center md:place-self-center"
               textSize="text-large"
             />
           ) : (
