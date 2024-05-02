@@ -56,6 +56,9 @@ I showed the design to my familly and to friends and got good reviews.
 
 I had to learn how to use interceptors. At the end, it turned out to be pretty easy.
 
+### Sharing Code between Web and Mobile
+I thought it would be complex, but it turned out be really straight forward. This is because most of the logic can be reused as it's the same for both apps. The only challenge was to make both versions look similar, so they go together. This was also not that hard after all.
+
 ## Folder Structure
 
 The code is all located in the src/ folder.
