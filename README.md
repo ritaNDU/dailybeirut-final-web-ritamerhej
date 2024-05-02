@@ -6,11 +6,11 @@
 
 Pay attention to the case. The email input is case sensitive.
 
-roy@testing.com
+rita@test.com
 
 ### Password:
 
-123456789
+1234567890
 
 ## Description
 
