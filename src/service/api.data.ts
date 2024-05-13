@@ -1,6 +1,4 @@
-// TODO:  Tnis should be turned into environment variable
-
-export const BASE_URL = "https://backend-practice.euriskomobility.me";
+export const BASE_URL = "http://192.30.129.113:5837";
 
 export const LOGIN_ENDPOINT = "/login";
 export const SIGNUP_ENDPOINT = "/signup";
